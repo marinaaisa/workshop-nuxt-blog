@@ -89,7 +89,7 @@
       ]
     ```
 
-## 👉 Step 2: Translate it to Spanish
+## 👉 Step 3: Translate it to Spanish
 
 1. Do the same inside `contents/es/blog/` and write a new markdown file with your translated blog post. Remember to translate the name of the file as well. Example:
 
@@ -116,7 +116,7 @@
       ]
     ```
 
-## 👉 Step 3: Add a webpack loader for your Markdown files
+## 👉 Step 4: Add a webpack loader for your Markdown files
 
 1. Install `frontmatter-markdown-loader`:
 
@@ -139,9 +139,15 @@
       }
     ```
 
-## 👉 Step 4: Import your Markdown files
+## 👉 Step 5: Import your Markdown files
+1. Go to `pages/index` and import the names of your blog posts before the `export default` object 
 
-1. Go to `pages/index` and inside the `asyncData` function add:
+  ```js
+    import blogsEn from '~/contents/en/blogsEn.js'
+    import blogsEs from '~/contents/es/blogsEs.js'
+  ```
+
+2. In `pages/index` add inside the `asyncData` function:
 
     ```js
     const blogs = app.i18n.locale === 'en' ? blogsEn : blogsEs
@@ -159,7 +165,7 @@
     })
     ```
 
-2. Go to `pages/blog/_slug` and inside the `asyncData` function add:
+3. Go to `pages/blog/_slug` and inside the `asyncData` function add:
 
     ```js
     const fileContent = await import(`~/contents/${app.i18n.locale}/blog/${params.slug}.md`)
@@ -180,7 +186,29 @@
     }
     ```
 
-## 👉 Step 4: Add transitions
+## 👉 Step 6: Tell your Nuxt configuration which are the routes you want to generate
+
+1. Go to `nuxt.config.js` and and import the names of your blog posts: 
+
+  ```js
+    import blogsEn from '~/contents/en/blogsEn.js'
+    import blogsEs from '~/contents/es/blogsEs.js'
+  ```
+
+1. In `nuxt.config.js` inside the `module.exports` object, add: 
+
+  ```js
+    generate: {
+      routes: [
+        '/es', '404'
+      ]
+      .concat(blogsEn.map(w => `/blog/${w}`))
+      .concat(blogsEs.map(w => `es/blog/${w}`))
+    }
+  ```
+
+
+## 👉 Step 7: Add transitions between pages for the dynamic routes of the blog
 
 1. Go to `assets/css/base/_general.scss`and add the following code:
 
@@ -204,7 +232,7 @@
     },
     ```
 
-## 👉 Step 5: Deploy on Netlify
+## 👉 Step 8: Deploy on Netlify
 
 1. Commit your local changes to your own repository
 
