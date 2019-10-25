@@ -88,8 +88,13 @@
         'bacon-ipsum',
       ]
     ```
+## 👉 Step 3: Add the needed images for the blog post
 
-## 👉 Step 3: Translate it to Spanish
+1. To add the main image that appears as a thumbnail on social networks, go to `static/images/` and create a folder called after the `id` of the blog. Add a image called `_thumbnail.jpg` inside of it. Example: `static/images/bacon-ipsum/_thumbnail.jpg`
+
+2. To add the main image that appears as a thumbnail in the main page, go to `assets/images/blog` and create a folder called after the `id` of the blog. Add a image called `_thumbnail.jpg` and `_main.jpg` inside of it. Example: `assets/images/blog/bacon-ipsum/_thumbnail.jpg` and `assets/images/blog/bacon-ipsum/_main.jpg`
+
+## 👉 Step 4: Translate it to Spanish
 
 1. Do the same inside `contents/es/blog/` and write a new markdown file with your translated blog post. Remember to translate the name of the file as well. Example:
 
@@ -116,7 +121,7 @@
       ]
     ```
 
-## 👉 Step 4: Add a webpack loader for your Markdown files
+## 👉 Step 5: Add a webpack loader for your Markdown files
 
 1. Install `frontmatter-markdown-loader`:
 
@@ -139,7 +144,7 @@
       }
     ```
 
-## 👉 Step 5: Import your Markdown files
+## 👉 Step 6: Import your Markdown files
 1. Go to `pages/index` and import the names of your blog posts before the `export default` object 
 
   ```js
@@ -186,7 +191,7 @@
     }
     ```
 
-## 👉 Step 6: Tell your Nuxt configuration which are the routes you want to generate
+## 👉 Step 7: Tell your Nuxt configuration which are the routes you want to generate
 
 1. Go to `nuxt.config.js` and and import the names of your blog posts: 
 
@@ -208,7 +213,7 @@
   ```
 
 
-## 👉 Step 7: Add transitions between pages for the dynamic routes of the blog
+## 👉 Step 8: Add transitions between pages for the dynamic routes of the blog
 
 1. Go to `assets/css/base/_general.scss`and add the following code:
 
@@ -232,7 +237,7 @@
     },
     ```
 
-## 👉 Step 8: Deploy on Netlify
+## 👉 Step 9: Deploy on Netlify
 
 1. Commit your local changes to your own repository
 
