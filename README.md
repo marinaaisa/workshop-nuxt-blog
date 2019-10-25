@@ -6,24 +6,27 @@
   <img src="https://geekytheory.com/wp-content/uploads/2014/03/markdown_inte-1024x630.png" height="60">
 </p>
 <h1 align="center">
-  Building a multilingual blog using Vue.js, Nuxt and Markdown
+  Workshop: Building a multilingual blog using Vue.js, Nuxt and Markdown
 </h1>
+<p align="center">
+  Just follow the steps and ask <a href="https://twitter.com/MarinaAisa">Marina Aísa</a> anything you want during the workshop or afterwards.
+</p>
 
 ## ⚡️ Live
 [Check how the final result should look like](https://nuxt-markdown-blog-starter.netlify.com/)
 
-## 👉 Step 0
+## 👉 Step 0: Preferably, do it before the workshop starts
 
 1.  You need to install Node first in your computer
 
     **For Mac:**
 
-    Install Homebrew (if you don't have it yet)...
+    Install Homebrew (if you don't have it yet)
 
     ```sh
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ```
-    ... and then install Node through Homebrew:
+    and then install Node through Homebrew:
 
     ```sh
     brew install node
@@ -33,15 +36,15 @@
 
 ## 👉 Step 1: Download the project and get started
 
-1.  Clone this repository.
+1.  **Fork** this repository clicking on the `Fork` button on the top right of this page.
+
+2.  Clone your forked repository to download it in your local machine.
 
     ```sh
-    git clone https://github.com/marinaaisa/workshop-nuxt-blog.git
+    git clone https://github.com/[YOUR-USERNAME]/workshop-nuxt-blog.git
     ```
 
-2.  Go to the project and install npm.
-
-    Navigate into your new site’s directory and install all the needed node packages.
+3.  Go to the project and install npm.
 
     ```sh
     cd workshop-nuxt-blog/
@@ -49,7 +52,7 @@
     git fetch
     ```
 
-3.  Running!
+4.  Run a node server working in your local machine to see your following changes
 
     ```sh
     npm run dev
@@ -61,7 +64,7 @@
 
 1.  Go to `contents/en/blog/` to create your blog post in Markdown (.md) with this syntaxis:
 
-    **Remember the name of this file will be the name of the URL and it has to be the same as the `name` property inside the Markdown**
+    **Important: the name of this file will be the name of the URL and it has to be the same as the `name` property inside the Markdown's frontmatter**
     
     Example:
 
@@ -78,7 +81,7 @@
       Bacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen.
     ```
 
-2. **Go to `contents/en/blogsEn.js` and write the `name` of your blog post inside the exported array.** Example:
+2. Go to `contents/en/blogsEn.js` and write the `name` of your blog post inside the exported array. Example:
 
     ```js
       export default [
@@ -88,7 +91,9 @@
 
 ## 👉 Step 2: Translate it to Spanish
 
-1. Do the same inside `contents/es/blog/` and write a new markdown file with your translated blog post. Remember to translate the name of the file as well. `id` has to be the same as the one in English. Example:
+1. Do the same inside `contents/es/blog/` and write a new markdown file with your translated blog post. Remember to translate the name of the file as well. Example:
+
+**Important: `id` has to be the same as the one in English.**
 
     ```
       ---
@@ -103,7 +108,7 @@
       Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla., croquetas no pega ojo y la Torrente copazo. Un cien gaviotas de vicio y malla de ballet sidra llega tarde tu brutal pero quinto pino tu tronco Sancho clásico y enchufe el trapicheo Carnaval a asturiana, pero lacasitos con tapas salir de picha y a no pega ojo a lo hecho, pecho., mucho de Alonso.
     ```
 
-2. **Do the same as in English, go to `contents/es/blogsEs.js` and write the `name` of your blog post inside the exported array.** Example:
+1. Do the same as in English, go to `contents/es/blogsEs.js` and write the `name` of your blog post inside the exported array. Example:
 
     ```js
       export default [
@@ -179,7 +184,7 @@
 
 1. Go to `assets/css/base/_general.scss`and add the following code:
 
-    ```
+    ```css
     .slide-fade-enter-active,
     .slide-fade-leave-active {
       transition: transform .4s, opacity .4s;
@@ -193,7 +198,7 @@
 
 2. Go to `pages/blog/_slug` and add inside the `export default` object:
 
-    ```
+    ```js
     transition: {
       name: 'slide-fade'
     },
@@ -201,7 +206,19 @@
 
 ## 👉 Step 5: Deploy on Netlify
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/marinaaisa/workshop-nuxt-blog)
+1. Commit your local changes to your own repository
+
+    ```sh
+    git add .
+    git commit -m "Upload new changes"
+    git push
+    ```
+
+2. Create an account for free on [Netlify](netlify.com)
+
+3. Click the button `New site from Github` in your dashboard page on Netlify, select your repository and follow the instructions.
+
+4. You will get your page online!
 
 ## The result
 
