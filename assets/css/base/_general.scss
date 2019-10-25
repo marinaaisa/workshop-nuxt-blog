@@ -23,16 +23,6 @@ body {
   }
 }
 
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: transform .4s, opacity .4s;
-}
-.slide-fade-enter,
-.slide-fade-leave-to {
-  transform: translateX(50px);
-  opacity: 0;
-}
-
 @keyframes fadeinmove {
   from { opacity: 0; transform: translateX(+20%);  }
   to   { opacity: 1; transform: translateX(0%); }

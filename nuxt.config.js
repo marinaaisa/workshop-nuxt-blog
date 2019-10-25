@@ -1,14 +1,12 @@
 const builtAt = new Date().toISOString()
 const path = require('path')
 const { I18N } = require('./locales/i18n-nuxt-config')
-import blogsEn from './contents/en/blogsEn.js'
-import blogsEs from './contents/es/blogsEs.js'
 
 const productionUrl = {
   en: "/en",
   es: "/es"
 };
-const baseUrl = 'https://marinaaisa.com';
+const baseUrl = '';
 
 module.exports = {
   env: {
@@ -16,7 +14,7 @@ module.exports = {
     productionUrl
   },
   head: {
-    title: 'Marina Aisa | Product Designer & Front-end Developer',
+    title: 'Workshop',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' },
@@ -68,15 +66,6 @@ module.exports = {
       config.module.rules.splice(config.module.rules.indexOf(rule), 1)
 
       config.module.rules.push({
-        test: /\.md$/,
-        loader: 'frontmatter-markdown-loader',
-        include: path.resolve(__dirname, 'contents'),
-        options: {
-          vue: {
-            root: "dynamicMarkdown"
-          }
-        }
-      }, {
         test: /\.(jpe?g|png)$/i,
         loader: 'responsive-loader',
         options: {
@@ -117,12 +106,4 @@ module.exports = {
       urls: ['/fonts/fonts.css']
     }
   },
-
-  generate: {
-    routes: [
-      '/es', '404'
-    ]
-    .concat(blogsEn.map(w => `/blog/${w}`))
-    .concat(blogsEs.map(w => `es/blog/${w}`))
-  }
 }
