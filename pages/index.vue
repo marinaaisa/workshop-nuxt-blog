@@ -38,16 +38,16 @@
 
     head () {
       return {
-        title: this.$t('indexPageHead.title'),
+        title: "Workshop Nuxt blog",
         htmlAttrs: {
           lang: this.$i18n.locale,
         },
         meta: [
           { name: "author", content: "Marina Aisa" },
-          { name: "description", property: "og:description", content: this.$t('indexPageHead.description'), hid: "description" },
-          { property: "og:title", content: this.$t('indexPageHead.title') },
+          { name: "description", property: "og:description", content: "Workshop Nuxt blog", hid: "description" },
+          { property: "og:title", content: "Workshop Nuxt blog" },
           { property: "og:image", content: this.ogImage },
-          { name: "twitter:description", content: this.$t('indexPageHead.description') },
+          { name: "twitter:description", content: "Workshop Nuxt blog" },
           { name: "twitter:image", content: this.ogImage }
         ]
       };
