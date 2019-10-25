@@ -5,6 +5,5 @@ export default {
   soonLanguagePost: 'Artículo disponible en español pronto',
   comeBack: 'Come back',
   posts: 'Posts',
-  home: 'Home',
   footer: footer
 }
