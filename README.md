@@ -49,7 +49,6 @@
     ```sh
     cd workshop-nuxt-blog/
     npm install
-    git fetch
     ```
 
 4.  Run a node server working in your local machine to see your following changes
@@ -113,13 +112,14 @@
       Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla., croquetas no pega ojo y la Torrente copazo. Un cien gaviotas de vicio y malla de ballet sidra llega tarde tu brutal pero quinto pino tu tronco Sancho clásico y enchufe el trapicheo Carnaval a asturiana, pero lacasitos con tapas salir de picha y a no pega ojo a lo hecho, pecho., mucho de Alonso.
     ```
 
-1. Do the same as in English, go to `contents/es/blogsEs.js` and write the `name` of your blog post inside the exported array. Example:
+2. Do the same as in English, go to `contents/es/blogsEs.js` and write the `name` of your blog post inside the exported array. Example:
 
     ```js
       export default [
         'jamon-ipsum',
       ]
     ```
+3. Add the `trans` property in the markdown's frontmatter with the reverse language name on it. So, in this example, for the Spanish version will be `trans: 'bacon-input'` and for the English version will be `trans: 'jamon-input'`.
 
 ## 👉 Step 5: Add a webpack loader for your Markdown files
 
