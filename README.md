@@ -248,7 +248,7 @@
     git push
     ```
 
-2. Create an account for free on [Netlify](netlify.com)
+2. Create an account for free on [Netlify](https://www.netlify.com/)
 
 3. Click the button `New site from Github` in your dashboard page on Netlify, select your repository and follow the instructions.
 
