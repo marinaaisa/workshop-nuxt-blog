@@ -24,7 +24,7 @@
     Install Homebrew (if you don't have it yet)
 
     ```sh
-      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     ```
     and then install Node through Homebrew:
 
@@ -68,24 +68,24 @@
     Example:
 
     ```
-      ---
-      name: 'bacon-ipsum'
-      title: Bacon Ipsum
-      year: 8 November 2019
-      id: 'bacon-ipsum'
-      description: |
-        Bacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak.
-      ---
+    ---
+    name: 'bacon-ipsum'
+    title: Bacon Ipsum
+    year: 8 November 2019
+    id: 'bacon-ipsum'
+    description: |
+      Bacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak.
+    ---
 
-      Bacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen.
+    Bacon ipsum dolor amet spare ribs ham t-bone buffalo prosciutto, frankfurter bresaola short ribs cupim ground round filet mignon shoulder pork chuck strip steak. Jowl biltong meatloaf ham hock alcatra hamburger pork chop andouille pastrami leberkas frankfurter short ribs bacon venison. Shoulder pork belly andouille burgdoggen.
     ```
 
 2. Go to `contents/en/blogsEn.js` and write the `name` of your blog post inside the exported array. Example:
 
     ```js
-      export default [
-        'bacon-ipsum',
-      ]
+    export default [
+      'bacon-ipsum',
+    ]
     ```
 ## 👉 Step 3: Add the needed images for the blog post
 
@@ -99,25 +99,25 @@
 
 **Important: `id` has to be the same as the one in English.**
 
-    ```
-      ---
-      name: 'jamon-ipsum'
-      title: Jamon Ipsum
-      year: 8 Noviembre 2019
-      id: 'bacon-ipsum'
-      description: |
-        Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla.
-      ---
+  ```
+  ---
+  name: 'jamon-ipsum'
+  title: Jamon Ipsum
+  year: 8 Noviembre 2019
+  id: 'bacon-ipsum'
+  description: |
+    Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla.
+  ---
 
-      Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla., croquetas no pega ojo y la Torrente copazo. Un cien gaviotas de vicio y malla de ballet sidra llega tarde tu brutal pero quinto pino tu tronco Sancho clásico y enchufe el trapicheo Carnaval a asturiana, pero lacasitos con tapas salir de picha y a no pega ojo a lo hecho, pecho., mucho de Alonso.
-    ```
+  Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla., croquetas no pega ojo y la Torrente copazo. Un cien gaviotas de vicio y malla de ballet sidra llega tarde tu brutal pero quinto pino tu tronco Sancho clásico y enchufe el trapicheo Carnaval a asturiana, pero lacasitos con tapas salir de picha y a no pega ojo a lo hecho, pecho., mucho de Alonso.
+  ```
 
 2. Do the same as in English, go to `contents/es/blogsEs.js` and write the `name` of your blog post inside the exported array. Example:
 
     ```js
-      export default [
-        'jamon-ipsum',
-      ]
+    export default [
+      'jamon-ipsum',
+    ]
     ```
 3. Add the `trans` property in the markdown's frontmatter with the reverse language name on it. So, in this example, for the Spanish version will be `trans: 'bacon-input'` and for the English version will be `trans: 'jamon-input'`.
 
@@ -126,32 +126,32 @@
 1. Install `frontmatter-markdown-loader`:
 
     ```sh
-      npm install frontmatter-markdown-loader
+    npm install frontmatter-markdown-loader
     ```
 
 2. Go to `nuxt.config.js` and add inside `config.module.rules.push(` this object:
 
     ```js
-      {
-        test: /\.md$/,
-        loader: 'frontmatter-markdown-loader',
-        include: path.resolve(__dirname, 'contents'),
-        options: {
-          mode: [Mode.VUE_RENDER_FUNCTIONS],
-          vue: {
-            root: "dynamicMarkdown"
-          }
+    {
+      test: /\.md$/,
+      loader: 'frontmatter-markdown-loader',
+      include: path.resolve(__dirname, 'contents'),
+      options: {
+        mode: [Mode.VUE_RENDER_FUNCTIONS],
+        vue: {
+          root: "dynamicMarkdown"
         }
       }
+    }
     ```
 
 ## 👉 Step 6: Import your Markdown files
 1. Go to `pages/index` and import the names of your blog posts before the `export default` object 
 
-  ```js
+    ```js
     import blogsEn from '~/contents/en/blogsEn.js'
     import blogsEs from '~/contents/es/blogsEs.js'
-  ```
+    ```
 
 2. In `pages/index` add inside the `asyncData` function:
 
@@ -196,14 +196,14 @@
 
 1. Go to `nuxt.config.js` and and import the names of your blog posts: 
 
-  ```js
+    ```js
     import blogsEn from '~/contents/en/blogsEn.js'
     import blogsEs from '~/contents/es/blogsEs.js'
-  ```
+    ```
 
 1. In `nuxt.config.js` inside the `module.exports` object, add: 
 
-  ```js
+    ```js
     generate: {
       routes: [
         '/es', '404'
@@ -211,7 +211,7 @@
       .concat(blogsEn.map(w => `/blog/${w}`))
       .concat(blogsEs.map(w => `es/blog/${w}`))
     }
-  ```
+    ```
 
 
 ## 👉 Step 8: Add transitions between pages for the dynamic routes of the blog
