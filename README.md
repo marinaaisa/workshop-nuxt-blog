@@ -99,18 +99,18 @@
 
 **Important: `id` has to be the same as the one in English.**
 
-    ```
-    ---
-    name: 'jamon-ipsum'
-    title: Jamon Ipsum
-    year: 8 Noviembre 2019
-    id: 'bacon-ipsum'
-    description: |
-      Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla.
-    ---
+  ```
+  ---
+  name: 'jamon-ipsum'
+  title: Jamon Ipsum
+  year: 8 Noviembre 2019
+  id: 'bacon-ipsum'
+  description: |
+    Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla.
+  ---
 
-    Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla., croquetas no pega ojo y la Torrente copazo. Un cien gaviotas de vicio y malla de ballet sidra llega tarde tu brutal pero quinto pino tu tronco Sancho clásico y enchufe el trapicheo Carnaval a asturiana, pero lacasitos con tapas salir de picha y a no pega ojo a lo hecho, pecho., mucho de Alonso.
-    ```
+  Jamón ipsum borrachos como cubas flamenco caramba picha. Y los reconquista ronda manchego. Barça y mi de vicio morcilla litros. Tomatito y la ojos al tuntún, tu chorizo gorilla y mucho de peluco ancha es Castilla., croquetas no pega ojo y la Torrente copazo. Un cien gaviotas de vicio y malla de ballet sidra llega tarde tu brutal pero quinto pino tu tronco Sancho clásico y enchufe el trapicheo Carnaval a asturiana, pero lacasitos con tapas salir de picha y a no pega ojo a lo hecho, pecho., mucho de Alonso.
+  ```
 
 2. Do the same as in English, go to `contents/es/blogsEs.js` and write the `name` of your blog post inside the exported array. Example:
 
@@ -148,10 +148,10 @@
 ## 👉 Step 6: Import your Markdown files
 1. Go to `pages/index` and import the names of your blog posts before the `export default` object 
 
-  ```js
-  import blogsEn from '~/contents/en/blogsEn.js'
-  import blogsEs from '~/contents/es/blogsEs.js'
-  ```
+    ```js
+    import blogsEn from '~/contents/en/blogsEn.js'
+    import blogsEs from '~/contents/es/blogsEs.js'
+    ```
 
 2. In `pages/index` add inside the `asyncData` function:
 
@@ -196,22 +196,22 @@
 
 1. Go to `nuxt.config.js` and and import the names of your blog posts: 
 
-  ```js
-  import blogsEn from '~/contents/en/blogsEn.js'
-  import blogsEs from '~/contents/es/blogsEs.js'
-  ```
+    ```js
+    import blogsEn from '~/contents/en/blogsEn.js'
+    import blogsEs from '~/contents/es/blogsEs.js'
+    ```
 
 1. In `nuxt.config.js` inside the `module.exports` object, add: 
 
-  ```js
-  generate: {
-    routes: [
-      '/es', '404'
-    ]
-    .concat(blogsEn.map(w => `/blog/${w}`))
-    .concat(blogsEs.map(w => `es/blog/${w}`))
-  }
-  ```
+    ```js
+    generate: {
+      routes: [
+        '/es', '404'
+      ]
+      .concat(blogsEn.map(w => `/blog/${w}`))
+      .concat(blogsEs.map(w => `es/blog/${w}`))
+    }
+    ```
 
 
 ## 👉 Step 8: Add transitions between pages for the dynamic routes of the blog
